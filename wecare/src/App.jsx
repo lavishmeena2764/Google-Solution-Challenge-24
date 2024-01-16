@@ -5,8 +5,19 @@ function App() {
     <>
       <nav className="w-full">
         <ul className="flex w-full flex-wrap items-center justify-between px-3 py-7">
-          <li>logo</li>
-          <div className="flex w-[40%] items-center justify-evenly text-blue-400 font-serif font-500">
+          <li className="ml-12">
+            <div className="flex items-center">
+              <img
+                src="../public/logo.png"
+                alt=""
+                height={40}
+                width={40}
+                className="mr-3"
+              />
+              <p className="text-[#1c9bcd] text-xl">Medify.ai</p>
+            </div>
+          </li>
+          <div className="flex w-[40%] items-center justify-evenly font-serif font-500">
             <li>Find Doctors</li>
             <li>Sign Up</li>
             <li>Login</li>
@@ -16,15 +27,17 @@ function App() {
       </nav>
       <main className="flex justify-between bg-blue-400 h-[360px]">
         <section className=" h-full py-6 text-white px-[70px] flex flex-col justify-around">
-          <p className="text-5xl font-800 font-serif">Heading</p>
+          <p className="text-5xl font-800 font-serif">
+            Easy, Fast, and Precise Health Analysis
+          </p>
           <p className="text-xl mb-8 font-serif font-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic
-            possimus accusantium obcaecati assumenda repellendus aut, accusamus
-            reprehenderit
+            Unlock your well-being with AI-driven health insights. Predict
+            potential risks, connect with experts, and embrace a personalized
+            path to a healthier you.
           </p>
           <button
             type="button"
-            className="focus:outline-none font-serif font-500 text-white bg-green-600 hover:bg-green-800 text-lg rounded-full px-5 py-2.5 w-[150px]"
+            className="font-serif font-500 text-white bg-green-600 hover:bg-green-800 text-lg rounded-full px-5 py-2.5 w-[150px]"
           >
             Get Started!
           </button>
@@ -38,7 +51,9 @@ function App() {
       </main>
       <main className="flex flex-col mt-10 font-serif text-center">
         <p className="text-4xl mt-6 mb-4 pl-[36px] font-800 ">Services</p>
-        <p className="text-2xl my-2 mb-8 pl-[36px] font-400 text-stone-500">We offer</p>
+        <p className="text-2xl my-2 mb-8 pl-[36px] font-400 text-stone-500">
+          We offer
+        </p>
         <Categorycarousel />
         <br></br>
       </main>
