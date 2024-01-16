@@ -17,32 +17,34 @@ function App() {
               <p className="text-[#1c9bcd] text-xl">Medify.ai</p>
             </div>
           </li>
-          <div className="flex w-[40%] items-center justify-evenly font-serif font-500">
-            <li>Find Doctors</li>
+          <div className="flex w-[40%] items-center justify-evenly font-serif font-500 text-medBlue">
+            <li>About Us</li>
             <li>Sign Up</li>
             <li>Login</li>
-            <li>About Us</li>
           </div>
         </ul>
       </nav>
-      <main className="flex justify-between bg-blue-400 h-[360px]">
+      <main className="flex justify-between bg-medBlue h-[360px]">
         <section className=" h-full py-6 text-white px-[70px] flex flex-col justify-around">
           <p className="text-5xl font-800 font-serif">
             Easy, Fast, and Precise Health Analysis
           </p>
-          <p className="text-xl mb-8 font-serif font-500">
+          <p className="text-xl mb-7 mt-3 font-serif font-500">
             Unlock your well-being with AI-driven health insights. Predict
             potential risks, connect with experts, and embrace a personalized
             path to a healthier you.
           </p>
-          <button
-            type="button"
-            className="font-serif font-500 text-white bg-green-600 hover:bg-green-800 text-lg rounded-full px-5 py-2.5 w-[150px]"
-          >
-            Get Started!
-          </button>
+          <div className="mb-4">
+            <button
+              type="button"
+              className="font-serif font-500 text-white bg-medGreen-base hover:bg-medGreen-darker text-lg rounded-full px-5 py-2.5 w-[150px]"
+            >
+              Get Started!
+            </button>
+          </div>
           <p className="font-serif font-500">
-            <VerifiedIcon /> Get connected to verified doctors nearest to you
+            <VerifiedIcon /> Connect with trusted local healthcare experts for
+            personalized guidance
           </p>
         </section>
         <section className="hidden sm:block min-w-[360px] mx-9">
