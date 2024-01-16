@@ -8,7 +8,7 @@ function App() {
           <li className="ml-12">
             <div className="flex items-center">
               <img
-                src="../public/logo.png"
+                src="../logo.png"
                 alt=""
                 height={40}
                 width={40}
