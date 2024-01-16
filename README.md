@@ -1,5 +1,5 @@
-To run locally : 
-Clone to machine
-cd wecare
-npm install
-npm run dev
+# To run locally 
+- Clone to machine
+- cd wecare
+- npm install
+- npm run dev
