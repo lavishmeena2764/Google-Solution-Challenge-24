@@ -14,13 +14,13 @@ function App() {
                 width={40}
                 className="mr-3"
               />
-              <p className="text-[#1c9bcd] text-xl">Medify.ai</p>
+              <p className="text-medBlue text-xl font-">Medify.ai</p>
             </div>
           </li>
-          <div className="flex w-[40%] items-center justify-evenly font-serif font-500 text-medBlue">
+          <div className="flex w-[40%] items-center justify-evenly font-serif font-500 text-medBlue text-lg">
             <li>About Us</li>
             <li>Sign Up</li>
-            <li>Login</li>
+            <li className="bg-medBlue text-white px-5 py-2.5 rounded-full">Login</li>
           </div>
         </ul>
       </nav>
