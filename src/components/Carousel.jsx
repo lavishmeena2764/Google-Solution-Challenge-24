@@ -9,23 +9,24 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 4,
+    items: 3,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
   },
 };
-export default function Categorycarousel(){
+
+function Categorycarousel(){
     return (
       <Carousel
         swipeable={false}
         draggable={false}
-        arrows={false}
+        arrows={true}
         autoPlay={true}
         responsive={responsive}
         infinite={true}
-        autoPlaySpeed={2000}
+        autoPlaySpeed={1500}
         keyBoardControl={true}
         customTransition="all .5"
         transitionDuration={1000}
@@ -98,4 +99,19 @@ export default function Categorycarousel(){
         </div>
       </Carousel>
     );
+}
+
+export default function Carousels(){
+  return (
+    <div>
+      <main className="flex flex-col font-serif mt-10">
+        <div className="text-center py-4">
+          <p className="text-4xl font-800 ">Services</p>
+          <p className="text-2xl font-400 text-stone-500 py-4">We offer</p>
+        </div>
+        <Categorycarousel />
+        <br></br>
+      </main>
+    </div>
+  );
 }

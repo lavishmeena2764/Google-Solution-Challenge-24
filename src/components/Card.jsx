@@ -14,13 +14,13 @@ export default function Cards(props) {
           className="w-[50px] h-[100px]"
         />
         <CardContent>
-          <Typography className="text-xl text-center" component="div">
+          <Typography className="text-xl text-center font-serif" component="div">
             {props.name}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="flex flex-col mt-[0.1px] items-center">
-        <Button size="small" color="primary">
+      <CardActions className="flex flex-col mt-[0.1px] items-center ">
+        <Button size="small" color="primary" >
           Consult
         </Button>
       </CardActions>
