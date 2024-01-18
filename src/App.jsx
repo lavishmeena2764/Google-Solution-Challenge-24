@@ -8,9 +8,8 @@ function App() {
     <NavBar/>
       <MainPage/>
       <Carousels/>
-      
       <main>
-        <p className="text-4xl my-5 mb-14 pl-[36px] font-serif font-600 text-center">
+        <p className="text-4xl my-5 font-serif font-600 text-center">
           Heading
         </p>
       </main>
