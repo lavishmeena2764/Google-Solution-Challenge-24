@@ -1,18 +1,22 @@
 import Carousels from "./components/Carousel";
+import Footer from "./components/Footer";
 import MainPage from "./components/MainPage";
 import NavBar from "./components/NavBar";
 function App() {
   
   return (
     <>
-    <NavBar/>
-      <MainPage/>
-      <Carousels/>
+      <NavBar />
+      <MainPage />
+      <Carousels />
       <main>
-        <p className="text-4xl my-5 font-serif font-600 text-center">
-          Heading
-        </p>
+        <div>
+          <p className="text-4xl my-5 font-serif font-600 text-center">
+            Heading
+          </p>
+        </div>
       </main>
+      <Footer/>
     </>
   );
 }
