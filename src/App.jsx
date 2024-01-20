@@ -1,4 +1,5 @@
 import Carousels from "./components/Carousel";
+import HorizontalNonLinearStepper from "./components/Stepper";
 import Footer from "./components/Footer";
 import MainPage from "./components/MainPage";
 import NavBar from "./components/NavBar";
@@ -9,11 +10,14 @@ function App() {
       <NavBar />
       <MainPage />
       <Carousels />
-      <main>
-        <div>
+      <main className="my-5 mb-10 mx-2">
+        <div className="flex flex-col justify-center items-center">
           <p className="text-4xl my-5 font-serif font-600 text-center">
-            Heading
+            How It Works
           </p>
+          <div className="w-full">
+            <HorizontalNonLinearStepper/>
+          </div>
         </div>
       </main>
       <Footer/>
