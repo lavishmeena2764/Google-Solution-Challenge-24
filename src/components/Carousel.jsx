@@ -106,8 +106,10 @@ export default function Carousels(){
     <div>
       <main className="flex flex-col font-serif mt-10">
         <div className="text-center py-4">
-          <p className="text-2xl md:text-4xl font-800 ">Services</p>
-          <p className="text-xl md:text-2xl font-400 text-stone-500 py-4">We offer</p>
+          <p className="text-3xl font-800 ">Services</p>
+          <p className="text-xl md:text-2xl font-400 text-stone-500 py-4">
+            We offer
+          </p>
         </div>
         <Categorycarousel />
         <br></br>
