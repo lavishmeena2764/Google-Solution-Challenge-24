@@ -11,8 +11,8 @@ function HowitWorks() {
             How It Works
           </p>
           <div className="w-full pl-[60px] py-5">
-            <VerticalLinearStepper />
-            {/* <HorizontalNonLinearStepper/> */}
+{/*             <VerticalLinearStepper />
+ */}            <HorizontalNonLinearStepper/>
           </div>
         </div>
       </main>

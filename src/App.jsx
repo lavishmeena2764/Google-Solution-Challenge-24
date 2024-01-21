@@ -3,19 +3,21 @@ import Footer from "./components/Footer";
 import HowitWorks from "./components/HowitWorks";
 import MainPage from "./components/MainPage";
 import NavBar from "./components/NavBar";
-
+import Login from "./pages/Login";
 function App() {
   
   return (
     <>
-      <NavBar />
+{/*       <NavBar />
       <MainPage />
       <Carousels />
       <HowitWorks/>
-      <Footer />
+      <Footer /> */}
+      <Login/>
     </>
   );
 }
+
 
 export default App
 

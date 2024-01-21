@@ -4,10 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        medBlue: "#1c9bcd",
+        medBlue: {
+          100: "#9ddaf2",
+          200: "#1c9bcd",
+        },
         medGreen: {
-          base: "#94c23f",
-          darker: "#779c32",
+          100:"#b4d479",
+          200: "#94c23f",
+          300: "#779c32",
         },
       },
     },
