@@ -16,7 +16,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full flex justify-between items-center h-24 mx-auto px-4 text-medBlue bg-white">
+    <nav className="w-full flex justify-between items-center h-24 mx-auto px-4 text-medBlue-200 bg-white">
       {/* Logo */}
 
       <div className="flex items-center">
@@ -27,14 +27,14 @@ const Navbar = () => {
           width={60}
           className="ml-1 lg:ml-10 "
         />
-        <p className="text-xl mx-2">Medify.ai</p>
+        <p className="text-xl mx-2 font-serif">Medify.ai</p>
       </div>
       {/* Desktop Navigation */}
       <ul className="hidden md:flex mr-1">
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="p-4 hover:bg-medGreen-base rounded-xl m-2 cursor-pointer duration-300 hover:text-white text-md"
+            className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-600 text-md"
           >
             {item.text}
           </li>
@@ -78,7 +78,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className="py-3 border-b px-5 rounded-xl duration-300 hover:text-white cursor-pointer border-stone-300 text-medBlue"
+              className="py-3 border-b px-5 rounded-xl duration-300 hover:text-white cursor-pointer border-stone-300 text-medBlue-200"
             >
               {item.text}
             </li>

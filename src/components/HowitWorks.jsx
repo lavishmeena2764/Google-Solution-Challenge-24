@@ -10,9 +10,9 @@ function HowitWorks() {
           <p className="text-3xl my-5 font-serif font-600 text-center">
             How It Works
           </p>
-          <div className="w-full pl-[60px] py-5">
-{/*             <VerticalLinearStepper />
- */}            <HorizontalNonLinearStepper/>
+          <div className="w-full pl-[50px] py-5">
+            <VerticalLinearStepper />
+             {/* <HorizontalNonLinearStepper/> */}
           </div>
         </div>
       </main>

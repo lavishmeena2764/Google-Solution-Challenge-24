@@ -52,14 +52,14 @@ export default function VerticalLinearStepper() {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    sx={{ mt: 1, mr: 1, bgcolor: "#1c9bcd",color:"white" }}
+                    sx={{ mt: 1, mr: 1, bgcolor: "#1c9bcd", color: "white" }}
                   >
                     {index === steps.length - 1 ? "Finish" : "Continue"}
                   </Button>
                   <Button
                     disabled={index === 0}
                     onClick={handleBack}
-                    sx={{ mt: 1, mr: 1 , color:"#1c9bcd"}}
+                    sx={{ mt: 1, mr: 1, color: "#1c9bcd" }}
                   >
                     Back
                   </Button>
@@ -70,7 +70,7 @@ export default function VerticalLinearStepper() {
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} sx={{ p: 2 }}>
+        <Paper square elevation={0} sx={{ p: 2, bgcolor: "#f3fafd" }}>
           <Button
             onClick={handleReset}
             sx={{ mt: 1, mr: 1, bgcolor: "#1c9bcd", color: "white" }}

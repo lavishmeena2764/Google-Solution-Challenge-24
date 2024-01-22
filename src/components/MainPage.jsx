@@ -2,7 +2,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 function MainPage() {
   return (
     <div>
-      <main className="flex justify-between bg-medBlue h-[400px] lg:h-[400px] xl:h-[360px]">
+      <main className="flex justify-between bg-medBlue-200 h-[400px] lg:h-[400px] xl:h-[360px]">
         <section className="h-full py-6  text-white xl:px-[60px] lg:px-[50px] px-[30px] flex flex-col justify-around">
           <p className="text-3xl sm:text-5xl font-800 font-serif pt-1">
             Easy, Fast, and Precise Health Analysis
@@ -15,7 +15,7 @@ function MainPage() {
           <div className="mb-4">
             <button
               type="button"
-              className="font-serif font-500 text-white bg-medGreen-base hover:bg-medGreen-darker text-lg rounded-full sm:px-5 sm:py-2.5 sm:w-[150px] w-[120px] px-0.5 py-0.5"
+              className="font-serif font-500 text-white bg-medGreen-200 hover:bg-medGreen-300 text-lg rounded-full sm:px-5 sm:py-2.5 sm:w-[150px] w-[120px] px-0.5 py-0.5"
             >
               Get Started!
             </button>

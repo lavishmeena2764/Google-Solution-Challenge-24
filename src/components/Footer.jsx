@@ -11,7 +11,7 @@ function Footer() {
         </div>
         <div className="flex items-center justify-center lg:my-8 my-5">
           <img src="../logo.png" height={50} width={50} className="mx-2" />
-          <p className="text-medBlue text-xl">Medify.ai</p>
+          <p className="text-medBlue-200 text-xl font-serif">Medify.ai</p>
         </div>
       </div>
     );
