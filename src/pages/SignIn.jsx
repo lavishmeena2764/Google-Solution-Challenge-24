@@ -11,10 +11,14 @@ import PersonIcon from "@mui/icons-material/Person";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 function Login() {
   return (
-    <div className=" flex w-full h-full bg-medBlue-50">
+    <>
+    <Navbar />
+    <div className=" flex w-full h-full bg-medBlue-50 mt-6 mt-8" style = {{marginBottom: '30px', paddingRight: '50px' }}>
       <div className="w-1/2 hidden md:block mt-[150px]">
         <div className="flex flex-col">
           <div className="flex items-center justify-center">
@@ -37,6 +41,8 @@ function Login() {
         <SignIn/> 
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 
@@ -80,6 +86,7 @@ function SignIn() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            mb: 8
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "#1c9bcd" }}>
@@ -143,7 +150,7 @@ function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
   );
