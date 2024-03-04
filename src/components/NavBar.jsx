@@ -9,10 +9,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 1, text: "Home" },
-    { id: 2, text: "About Us" },
-    { id: 3, text: "Login" },
-    { id: 4, text: "Sign Up" },
+    { id: 1, text: "Home", url: "/" },
+    { id: 2, text: "About Us", url: "/" },
+    { id: 3, text: "Sign In", url: "http://127.0.0.1:5173/signin" },
+    { id: 4, text: "Sign Up", url: "/" },
   ];
 
   return (
@@ -80,7 +80,7 @@ const Navbar = () => {
               key={item.id}
               className="py-3 border-b px-5 rounded-xl duration-300 hover:text-white cursor-pointer border-stone-300 text-medBlue-200"
             >
-              {item.text}
+              <a href={item.url}>{item.text}</a>
             </li>
           ))}
         </div>

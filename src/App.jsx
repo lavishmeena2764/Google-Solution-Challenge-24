@@ -1,28 +1,22 @@
-import Carousels from "./components/Carousel";
-import Footer from "./components/Footer";
-import HowitWorks from "./components/HowitWorks";
-import MainPage from "./components/MainPage";
-import NavBar from "./components/NavBar";
-import Login from "./pages/SignIn";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import Diabetes from "./pages/Diabetes";
+import Heart from "./pages/Heart";
+import Skin from "./pages/Skin";
+
 function App() {
-  
   return (
-    <>
-      <NavBar />
-      <MainPage />
-      <Carousels />
-      <HowitWorks/>
-      <Footer />
-      <Login/>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/diabetes' element={<Diabetes />} />
+        <Route path='/heart' element={<Heart />} />
+        <Route path='/skin' element={<Skin />} />
+      </Routes>
+    </Router>
   );
 }
 
-
-export default App
-
-/* sm	640px	@media (min-width: 640px) { ... }
-md	768px	@media (min-width: 768px) { ... }
-lg	1024px	@media (min-width: 1024px) { ... }
-xl	1280px	@media (min-width: 1280px) { ... }
-2xl	1536px @media (min-width: 1536px) { ... }  */
+export default App;
