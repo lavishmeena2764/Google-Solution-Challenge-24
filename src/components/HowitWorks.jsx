@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import HorizontalNonLinearStepper from "./StepperDesktop";
 import VerticalLinearStepper from "./StepperMobile";
 
@@ -10,9 +10,9 @@ function HowitWorks() {
           <p className="text-3xl my-5 font-serif font-600 text-center">
             How It Works
           </p>
-          <div className="w-full pl-[50px] py-5">
-            <VerticalLinearStepper />
-             {/* <HorizontalNonLinearStepper/> */}
+          <div className="w-full">
+            {/* <VerticalLinearStepper /> */}
+            <HorizontalNonLinearStepper />
           </div>
         </div>
       </main>

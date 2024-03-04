@@ -11,7 +11,7 @@ const Navbar = () => {
   const navItems = [
     { id: 1, text: "Home", url: "/" },
     { id: 2, text: "About Us", url: "/" },
-    { id: 3, text: "Sign In", url: "http://127.0.0.1:5173/signin" },
+    { id: 3, text: "Login", url: "http://127.0.0.1:5173/signin" },
     { id: 4, text: "Sign Up", url: "/" },
   ];
 
@@ -27,14 +27,14 @@ const Navbar = () => {
           width={60}
           className="ml-1 lg:ml-10 "
         />
-        <p className="text-xl mx-2 font-serif">Medify.ai</p>
+        <p className="text-2xl mx-2 font-serif">Medify.ai</p>
       </div>
       {/* Desktop Navigation */}
       <ul className="hidden md:flex mr-1">
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-600 text-md"
+            className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-600 text-lg"
           >
             {item.text}
           </li>

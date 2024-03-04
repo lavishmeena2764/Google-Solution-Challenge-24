@@ -12,10 +12,6 @@ function Home() {
       <Carousels />
       <HowitWorks/>
       <Footer />
-      {/* <Login/>
-      <Diabetes/>
-      <Heart/>
-      <Skin/> */}
     </>
   );
 }
