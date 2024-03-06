@@ -10,10 +10,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import PDFUpload from "../components/PDFUpload";
-
+/* global process */
 const defaultTheme = createTheme();
 
-function Skin() {
+function Upload() {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
 
@@ -86,7 +86,7 @@ function Skin() {
               <Button
                 variant="contained"
                 component="span"
-                sx={{ mb: 2, bgcolor: "#1c9bcd" }}
+                sx={{ mb: 2, bgcolor: "#1c9bcd", width: 200 }}
               >
                 Select Image
               </Button>
@@ -103,7 +103,7 @@ function Skin() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, bgcolor: "#1c9bcd" }}
+              sx={{ mt: 3, mb: 2, bgcolor: "#1c9bcd", width: 200 }}
             >
               Analyze
             </Button>
@@ -115,4 +115,4 @@ function Skin() {
   );
 }
 
-export default Skin;
+export default Upload;

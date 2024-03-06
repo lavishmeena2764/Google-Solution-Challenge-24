@@ -1,4 +1,4 @@
-import { InfinitySpin } from "react-loader-spinner"
+import { InfinitySpin } from "react-loader-spinner";
 
 /* medblue - #1c9bcd 
 base: "#94c23f",
@@ -11,11 +11,11 @@ function Loader() {
       <InfinitySpin
         visible={true}
         width="200"
-        color="white"
+        color="#1c9bcd "
         ariaLabel="infinity-spin-loading"
       />
     </div>
   );
 }
 
-export default Loader
+export default Loader;

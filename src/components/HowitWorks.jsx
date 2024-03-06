@@ -10,7 +10,7 @@ function HowitWorks() {
           <p className="text-3xl my-5 font-serif font-600 text-center">
             How It Works
           </p>
-          <div className="w-full">
+          <div className="w-full flex justify-center items-center">
             {/* <VerticalLinearStepper /> */}
             <HorizontalNonLinearStepper />
           </div>

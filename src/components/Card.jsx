@@ -6,21 +6,24 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function Cards(props) {
   return (
-    <Card className="h-[200px] w-[180px] shadow-slate-700">
+    <Card className="h-[300px] w-[250px] shadow-slate-700">
       <CardActionArea>
         <CardMedia
           component="img"
           image={`${props.img}`}
-          className="w-[50px] h-[100px]"
+          className="w-[50px] h-[200px]"
         />
         <CardContent>
-          <Typography className="text-xl text-center font-serif" component="div">
+          <Typography
+            className="text-xl text-center font-serif"
+            component="div"
+          >
             {props.name}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className="flex flex-col mt-[0.1px] items-center ">
-        <Button size="small" color="primary" >
+        <Button size="small" color="primary">
           Consult
         </Button>
       </CardActions>

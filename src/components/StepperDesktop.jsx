@@ -1,16 +1,21 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepButton from "@mui/material/StepButton";
+import Button from "@mui/material/Button";
 
-const steps = ['Login or Sign Up', 'Health History Submission', 'AI Driven Analysis','Personalised Insights','Connect with Healthcare Professionals'];
+const steps = [
+  "Login or Sign Up",
+  "Health History Submission",
+  "AI Driven Analysis",
+  "Personalised Insights",
+  "Connect with Healthcare Professionals",
+];
 
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
-
   const totalSteps = () => {
     return steps.length;
   };
@@ -30,9 +35,7 @@ export default function HorizontalNonLinearStepper() {
   const handleNext = () => {
     const newActiveStep =
       isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
-          // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
+        ? steps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
   };
@@ -58,7 +61,7 @@ export default function HorizontalNonLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%", paddingY: 3 }}>
+    <Box sx={{ width: "90%", paddingY: 3 }}>
       <Stepper
         nonLinear
         activeStep={activeStep}
@@ -68,7 +71,13 @@ export default function HorizontalNonLinearStepper() {
         {steps.map((label, index) => (
           <Step key={label} completed={completed[index]}>
             <StepButton onClick={handleStep(index)}>
-              <a href="www.google.com" target="_blank">{label}</a>
+              <a
+                href={`http://localhost:5173/skin`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {label}
+              </a>
             </StepButton>
           </Step>
         ))}

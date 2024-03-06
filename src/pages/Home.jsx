@@ -1,4 +1,4 @@
-import Carousels from "../components/Carousel";
+import Slider from "../components/Carousel";
 import Footer from "../components/Footer";
 import HowitWorks from "../components/HowitWorks";
 import MainPage from "../components/MainPage";
@@ -9,7 +9,7 @@ function Home() {
     <>
       <NavBar />
       <MainPage />
-      <Carousels />
+      <Slider/>
       <HowitWorks/>
       <Footer />
     </>

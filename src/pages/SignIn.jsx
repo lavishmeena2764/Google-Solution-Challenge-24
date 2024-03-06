@@ -17,52 +17,39 @@ import Footer from "../components/Footer";
 function Login() {
   return (
     <>
-    <Navbar />
-    <div className=" flex w-full h-full bg-medBlue-50 mt-6 mt-8" style = {{marginBottom: '30px', paddingRight: '50px' }}>
-      <div className="w-1/2 hidden md:block mt-[150px]">
-        <div className="flex flex-col">
-          <div className="flex items-center justify-center">
-            <img src="../../logo.png" height={80} width={80} />
-            <p className="text-medBlue-200 text-2xl font-serif px-2">
-              Medify.ai
+      <Navbar />
+      <div
+        className="flex w-full h-full bg-medBlue-50 my-6 justify-center items-center"
+        style={{ marginBottom: "30px", paddingRight: "50px" }}
+      >
+        <div className="w-1/2 hidden md:block mt-[150px]">
+          <div className="flex flex-col">
+            <div className="flex items-center justify-center">
+              <img src="../../logo.png" height={80} width={80} />
+              <p className="text-medBlue-200 text-2xl font-serif px-2">
+                Medify.ai
+              </p>
+            </div>
+            <p className="text-center my-3 text-medBlue-200 font-serif text-xl">
+              Easy , Fast and Precise Health Analysis
+            </p>
+            <p className="text-medBlue-200 px-3 text-center">
+              Transforming lives with AI-driven health insights and connections
+              to trusted professionals. Your path to proactive well-being starts
+              here.
             </p>
           </div>
-          <p className="text-center my-3 text-medBlue-200 font-serif text-xl">
-            Easy , Fast and Precise Health Analysis
-          </p>
-          <p className="text-medBlue-200 px-3 text-center">
-            Transforming lives with AI-driven health insights and connections to
-            trusted professionals. Your path to proactive well-being starts
-            here.
-          </p>
+        </div>
+        <div className="bg-white border-2 border-red-40 md:w-1/2 shadow-xl">
+          <SignIn />
         </div>
       </div>
-      <div className="bg-white md:w-1/2 shadow-xl">
-        <SignIn/> 
-      </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 }
 
 export default Login;
-
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="#">
-        Medify.ai
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -71,8 +58,8 @@ function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get("email"),
+      password: data.get("password"),
     });
   };
 
@@ -86,7 +73,7 @@ function SignIn() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            mb: 8
+            mb: 8,
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "#1c9bcd" }}>
@@ -150,7 +137,6 @@ function SignIn() {
             </Grid>
           </Box>
         </Box>
-        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
   );

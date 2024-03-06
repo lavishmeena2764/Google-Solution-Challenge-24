@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
@@ -9,10 +9,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 1, text: "Home", url: "/" },
-    { id: 2, text: "About Us", url: "/" },
-    { id: 3, text: "Login", url: "http://127.0.0.1:5173/signin" },
-    { id: 4, text: "Sign Up", url: "/" },
+    { id: 1, text: "Home", url: "http://localhost:5173/" },
+    { id: 2, text: "Services", url: "http://localhost:5173/" },
+    { id: 3, text: "Upload", url: "http://localhost:5173/upload" },
+    { id: 4, text: "Login/Register", url: "http://localhost:5173/login" },
   ];
 
   return (
@@ -27,7 +27,9 @@ const Navbar = () => {
           width={60}
           className="ml-1 lg:ml-10 "
         />
-        <p className="text-2xl mx-2 font-serif">Medify.ai</p>
+        <p className="text-2xl mx-2 font-serif">
+          <Link to="http://localhost:5173/">Medify.ai</Link>
+        </p>
       </div>
       {/* Desktop Navigation */}
       <ul className="hidden md:flex mr-1">
@@ -36,7 +38,7 @@ const Navbar = () => {
             key={item.id}
             className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-600 text-lg"
           >
-            {item.text}
+            <Link to={`${item.url}`}>{item.text}</Link>
           </li>
         ))}
       </ul>
