@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,26 +13,29 @@ import PersonIcon from '@mui/icons-material/Person';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
 
 const defaultTheme = createTheme();
 
 function HeartDiseaseForm() {
   const [formData, setFormData] = useState({
-    age: 0,
-    sex: 0,
-    cp: 0,
-    trestbps: 0,
-    chol: 0,
-    fbs: 0,
-    restecg: 0,
-    thalach: 0,
-    exang: 0,
-    oldpeak: 0,
-    slope: 0,
-    ca: 0,
-    thal: 0,
-    target: 0
+    Age: 0,
+    Sex: ["M","F"],
+    ChestPainType: ["ATA","NAP","ASY","TA"],
+    RestingBP: 0,
+    Cholesterol: 0,
+    FastingBS: 0,
+    RestingECG: ["Normal", "ST"],
+    MaxHR: 0,
+    ExerciseAngina: ['N','Y'],
+    Oldpeak: 0,
+    ST_Slope: ["Up", "Flat"]
   });
+  
+  const [result, setResult] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,13 +57,16 @@ function HeartDiseaseForm() {
         body: JSON.stringify(formData)
       });
       const data = await response.json();
+      setResult(data.data.data.data)
       // Handle response from ML model (e.g., display prediction results)
       console.log(data);
     } catch (error) {
       console.error('Error:', error);
     }
   };
-
+  const handleConsultClick = () => {
+    navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
         <Navbar />
@@ -82,17 +89,33 @@ function HeartDiseaseForm() {
             <Grid container spacing={2}>
               {Object.entries(formData).map(([key, value], index) => (
                 <Grid item xs={6} key={key}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id={key}
-                    label={key}
-                    name={key}
-                    type="number"
-                    value={value}
-                    onChange={handleChange}
-                  />
+                  <InputLabel>{key}</InputLabel>
+                  {Array.isArray(value) ? (
+                    <Select
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id={key}
+                      name={key}
+                      value={formData[key]}
+                      onChange={handleChange}
+                    >
+                      {value.map((option) => (
+                        <MenuItem key={option} value={option}>{option}</MenuItem>
+                      ))}
+                    </Select>
+                  ) : (
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id={key}
+                      name={key}
+                      type="number"
+                      value={formData[key]}
+                      onChange={handleChange}
+                    />
+                  )}
                 </Grid>
               ))}
             </Grid>
@@ -100,12 +123,36 @@ function HeartDiseaseForm() {
               <Button
                 type="submit"
                 variant="contained"
-                sx={{ mt: 3, mb: 2, bgcolor: "#1c9bcd", width: '50%' }} // Reduce the width here
+                sx={{ mt: 3, mb: 2, bgcolor: "#1c9bcd", width: '50%' }}
               >
                 Predict
               </Button>
             </Box>
           </form>
+
+
+          {result !== null && (
+        <Container component="main" maxWidth="sm" className="bg-white p-8 mb-6">
+          <Typography variant="h6" align="center" gutterBottom>
+            Prediction Result:
+          </Typography>
+          <Typography variant="body1" align="center">
+            {result === 0 ? 'No diabetes detected.' : 'Diabetes detected.'}
+          </Typography>
+          {result === 1 && (
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={handleConsultClick}
+              sx={{ mt: 2 }}
+            >
+              Consult
+            </Button>
+          )}
+        </Container>
+      )}
+
           <Box mt={4}>
             <Typography variant="h6" gutterBottom>
               Field Details
@@ -173,6 +220,7 @@ function HeartDiseaseForm() {
           </Box>
         </Box>
       </Container>
+     
       <Footer />
     </ThemeProvider>
   );

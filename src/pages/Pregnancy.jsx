@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -16,20 +15,17 @@ import Footer from '../components/Footer';
 
 const defaultTheme = createTheme();
 
-function DiabetesForm() {
+function PregnancyRiskForm() {
   const [formData, setFormData] = useState({
-    Pregnancies: 0,
-    Glucose: 0,
-    BloodPressure: 0,
-    SkinThickness: 0,
-    Insulin: 0,
-    BMI: 0,
-    DiabetesPedigreeFunction: 0,
-    Age: 0
+    age: 0,
+    SystolicBP: 0,
+    DiastolicBP: 0,
+    BS: 0,
+    BodyTemp: 0,
+    HeartRate: 0
   });
   
-  const [result, setResult] = useState(null);
-
+  const [result, setResult] = useState("low risk");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -65,7 +61,6 @@ function DiabetesForm() {
   };
 
   return (
-    
     <ThemeProvider theme={defaultTheme}>
       <Navbar />
       <Container component="main" maxWidth="sm" className="bg-white p-8 mt-4 mb-6">
@@ -81,17 +76,12 @@ function DiabetesForm() {
             <PersonIcon />
           </Avatar>
           <Typography component="h1" variant="h5" className="mb-4">
-            Diabetes Test
+            Pregnancy Risk Test
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <form onSubmit={handleSubmit} noValidate>
             <Grid container spacing={2}>
               {Object.entries(formData).map(([key, value], index) => (
-                <Grid item xs={6} key={index}>
+                <Grid item xs={12} key={index}>
                   <TextField
                     autoComplete="off"
                     name={key}
@@ -115,7 +105,7 @@ function DiabetesForm() {
             >
               Predict
             </Button>
-          </Box>
+          </form>
         </Box>
       </Container>
       {result !== null && (
@@ -124,9 +114,9 @@ function DiabetesForm() {
             Prediction Result:
           </Typography>
           <Typography variant="body1" align="center">
-            {result === 0 ? 'No diabetes detected.' : 'Diabetes detected.'}
+          <p>You have a {result} level</p>
           </Typography>
-          {result === 1 && (
+          {(result === 'high risk' || result === 'mid risk') && (
             <Button
               variant="contained"
               color="primary"
@@ -144,4 +134,4 @@ function DiabetesForm() {
   );
 }
 
-export default DiabetesForm;
+export default PregnancyRiskForm;
