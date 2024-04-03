@@ -8,6 +8,8 @@ import HeartDiseaseForm from "./pages/Heart";
 import KidneyDiseaseForm from "./pages/Kidney";
 import PregnancyRiskForm from "./pages/Pregnancy";
 import AlzheimerForm from "./pages/Alziemer";
+import SignUp from "./pages/SignUp";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/diabetes" element={<DiabetesForm />} />
@@ -23,8 +26,8 @@ function App() {
         <Route path="/pregnancy" element={<PregnancyRiskForm />} />
         <Route path="/alziemer" element={<AlzheimerForm />} />
         <Route path="/upload" element={<Upload />} />
-        
       </Routes>
+      <ToastContainer />
     </Router>
   );
 }

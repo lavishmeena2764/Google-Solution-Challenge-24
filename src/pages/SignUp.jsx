@@ -4,9 +4,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+// eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import 'react-toastify/dist/ReactToastify.css';
 import PersonIcon from "@mui/icons-material/Person";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -14,10 +15,15 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../components/Firebase";
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth,db } from "../components/Firebase";
+import { setDoc,doc } from "firebase/firestore";
 import { toast } from "react-toastify";
-function Login() {
+import { Grid } from "@mui/material";
+function SignUp() {
+
+
   return (
     <>
       <Navbar />
@@ -44,36 +50,45 @@ function Login() {
           </div>
         </div>
         <div className="bg-white border-2 border-red-40 md:w-1/2 shadow-xl">
-          <SignIn />
+          <Register />
         </div>
       </div>
       <Footer />
     </>
-  );
+  )
 }
 
-export default Login;
+export default SignUp
 
 const defaultTheme = createTheme();
 
-function SignIn() {
-  const [email,setEmail]=useState("");
-  const [passwd,setPasswd]=useState("");
+function Register() {
+    const [name,setName]=useState("");
+    const [email,setEmail]=useState("");
+    const [passwd,setPasswd]=useState("");
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(email,passwd);
     try{
-      await signInWithEmailAndPassword(auth,email,passwd);
-      toast.success("User Logged in Succesfully!",{
+       await createUserWithEmailAndPassword(auth,email,passwd);
+       const user=auth.currentUser;
+       console.log(user);
+       if(user){
+        await setDoc(doc(db,"Users",user.uid),{
+            name:name,
+            email:user.email,
+            passwd:passwd
+        })
+       }
+       toast.success("User Registered Succesfully!",{
         position:"top-left"
        })
-       window.location.href="/upload";
     }catch(err){
-      console.log(err);
-      toast.error(err.message,{
-          position:"top-left"
-      })
+        console.log(err);
+        toast.success(err.message,{
+            position:"top-left"
+        })
     }
   };
 
@@ -106,24 +121,35 @@ function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              onChange={(e)=>{setEmail(e.target.value)}}
+              name="name"
+              label="Name"
+              type="text"
               autoFocus
+              onChange={(e)=>{setName(e.target.value)}}
+              id="name"
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              onChange={(e)=>{setPasswd(e.target.value)}}
+              id="email"
+              label="Email Address"
+              onChange={(e)=>{setEmail(e.target.value)}}
+              name="email"
+              autoComplete="email"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               name="password"
               label="Password"
               type="password"
+              onChange={(e)=>{setPasswd(e.target.value)}}
               id="password"
               autoComplete="current-password"
             />
+
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
@@ -134,19 +160,14 @@ function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2, bgcolor: "#1c9bcd" }}
             >
-              Sign In
+              Register
             </Button>
-
+            
             <Grid container>
               <div className="flex flex-col md:flex-row justify-center items-center w-full">
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                    <div className="text-blue-500">Forgot password?</div>
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link to='/register'>
-                    <div className="text-blue-500">{"Don't have an account? Sign Up"}</div>
+                  <Link to="/login">
+                    <div className="text-blue-500">Already have an account? Login</div>
                   </Link>
                 </Grid>
               </div>

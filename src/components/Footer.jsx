@@ -1,10 +1,11 @@
 import CopyrightIcon from "@mui/icons-material/Copyright";
 function Footer() {
   return (
-    <div className="h-48 lg:h-[250px] bg-stone-900 w-full flex flex-col justify-between">
+    <div className="h-36 lg:h-[150px] bg-stone-900 w-full flex flex-col justify-between">
       <div className="h-3/5 my-3 flex text-white">
-        <div className="border-2 border-white w-1/2">content 1</div>
-        <div className="border-2 border-white w-1/2">content 2</div>
+        <div className="w-1/2">
+
+        </div>
       </div>
       <div className="flex items-center justify-center my-2">
         <img src="../logo.png" height={50} width={50} className="mx-2" />
