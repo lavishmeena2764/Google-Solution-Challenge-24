@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -16,6 +18,8 @@ import Navbar from '../components/NavBar';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
+
+
 
 const defaultTheme = createTheme();
 
@@ -68,7 +72,7 @@ function AlzheimerForm() {
     };
 
     const handleConsultClick = () => {
-        navigate(`/contact?disease=${encodeURIComponent('alzheimer')}`);
+        navigate(`/user/contact?disease=${encodeURIComponent('alzheimer')}`);
       };
 
     return (
@@ -87,7 +91,7 @@ function AlzheimerForm() {
                         <PersonIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5" className="mb-4">
-                        Alzheimer's Disease Test
+                        Alzheimer&apos;s Disease Test
                     </Typography>
                     <form onSubmit={handleSubmit} noValidate>
                         <Grid container spacing={2}>

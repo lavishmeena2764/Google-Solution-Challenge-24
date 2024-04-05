@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -57,7 +58,7 @@ function PregnancyRiskForm() {
   };
 
   const handleConsultClick = () => {
-    navigate(`/contact?disease=${encodeURIComponent('maternity')}`);
+    navigate(`/user/contact?disease=${encodeURIComponent('maternity')}`);
   };
 
   return (

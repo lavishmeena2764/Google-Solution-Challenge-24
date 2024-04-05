@@ -8,12 +8,19 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+  const userID=localStorage.getItem("uid");
+
   const navItems = [
     { id: 1, text: "Home", url: "http://localhost:5173/" },
     { id: 2, text: "Services", url: "http://localhost:5173/" },
     { id: 3, text: "Upload", url: "http://localhost:5173/user/upload" },
-    { id: 4, text: "Login/Register", url: "http://localhost:5173/login" },
+    { id: 4, text: userID?"Logout":"Login/Register", url: userID?"":"http://localhost:5173/login" },
   ];
+
+  // eslint-disable-next-line no-unused-vars
+  function deleteUser(){
+    localStorage.removeItem("uid");
+  }
 
   return (
     <nav className="w-full flex justify-between items-center h-24 mx-auto px-4 text-medBlue-200 bg-white">
@@ -36,7 +43,7 @@ const Navbar = () => {
         {navItems.map((item) => (
           <li
             key={item.id}
-            className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-600 text-lg"
+            className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-500 text-lg font-semibold"
           >
             <Link to={`${item.url}`}>{item.text}</Link>
           </li>

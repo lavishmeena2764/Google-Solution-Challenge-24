@@ -17,6 +17,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../components/Firebase";
 import { toast } from "react-toastify";
+
 function Login() {
   return (
     <>
@@ -57,21 +58,25 @@ const defaultTheme = createTheme();
 
 function SignIn() {
   // eslint-disable-next-line no-unused-vars
-  const [userID,setUserID]=useState("");
   const [email,setEmail]=useState("");
   const [passwd,setPasswd]=useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(email,passwd);
+
     try{
       const user=await signInWithEmailAndPassword(auth,email,passwd);
-      toast.success("User Logged in Succesfully!",{
-        position:"top-center"
-       })
-       //console.log(user.user.uid);
-       setUserID(user.user.uid);  
-       localStorage.setItem("uid",userID);
+      
+       console.log(user.user);
+       if(user.user){
+        toast.success("User Logged in Succesfully!",{
+          position:"top-center"
+         })
+         localStorage.setItem("uid",user.user.uid);
+         window.location.href="/";
+       }
+       
     }catch(err){
       console.log(err);
       toast.error(err.message,{

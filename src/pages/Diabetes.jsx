@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -13,6 +14,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
+
+
 
 const defaultTheme = createTheme();
 
@@ -61,7 +64,7 @@ function DiabetesForm() {
   };
 
   const handleConsultClick = () => {
-    navigate(`/contact?disease=${encodeURIComponent('diabetes')}`);
+    navigate(`/user/contact?disease=${encodeURIComponent('diabetes')}`);
   };
 
   return (
