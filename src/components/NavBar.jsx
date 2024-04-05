@@ -20,6 +20,7 @@ const Navbar = () => {
   // eslint-disable-next-line no-unused-vars
   function deleteUser(){
     localStorage.removeItem("uid");
+    location.reload();
   }
 
   return (
@@ -45,7 +46,7 @@ const Navbar = () => {
             key={item.id}
             className="p-4 rounded-xl m-2 cursor-pointer duration-300 hover:text-blue-500 text-lg font-semibold"
           >
-            <Link to={`${item.url}`}>{item.text}</Link>
+            <Link to={`${item.url}`} onClick={item.text==="Logout"?deleteUser:""}>{item.text}</Link>
           </li>
         ))}
       </ul>

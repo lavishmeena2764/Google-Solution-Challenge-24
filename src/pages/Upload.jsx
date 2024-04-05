@@ -59,6 +59,7 @@ function Upload() {
         component="main"
         maxWidth="xs"
         className="bg-white p-6 mt-8 mb-6"
+        style={{marginBottom:"22.5vh"}}
       >
         <CssBaseline />
         <Box
