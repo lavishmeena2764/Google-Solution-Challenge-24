@@ -71,6 +71,7 @@ function SignIn() {
        })
        //console.log(user.user.uid);
        setUserID(user.user.uid);  
+       localStorage.setItem("uid",userID);
     }catch(err){
       console.log(err);
       toast.error(err.message,{

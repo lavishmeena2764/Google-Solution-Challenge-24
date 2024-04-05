@@ -1,7 +1,7 @@
 import {Outlet,Navigate} from "react-router-dom";
 
 function PrivateRoute() {
-    const login=true;
+    const login=localStorage.getItem("uid")?true:false;
     if(login){
         return (
             <>
