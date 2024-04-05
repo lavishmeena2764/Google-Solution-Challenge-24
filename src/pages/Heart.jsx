@@ -34,7 +34,7 @@ function HeartDiseaseForm() {
     ST_Slope: ["Up", "Flat"]
   });
   
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(1);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -65,7 +65,7 @@ function HeartDiseaseForm() {
     }
   };
   const handleConsultClick = () => {
-    navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
+    navigate(`/contact?disease=${encodeURIComponent('heart')}`);
   };
   return (
     <ThemeProvider theme={defaultTheme}>
