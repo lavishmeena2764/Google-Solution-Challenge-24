@@ -47,7 +47,7 @@ function KidneyDiseaseForm() {
         ane: ["yes", "no"],
     });
 
-    const [result, setResult] = useState(null);
+    const [result, setResult] = useState("ckd");
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -79,8 +79,8 @@ function KidneyDiseaseForm() {
     };
 
     const handleConsultClick = () => {
-        navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
-    };
+        navigate(`/contact?disease=${encodeURIComponent('kidney')}`);
+      };
 
     return (
         <ThemeProvider theme={defaultTheme}>

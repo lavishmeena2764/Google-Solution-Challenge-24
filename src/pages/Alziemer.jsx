@@ -68,8 +68,8 @@ function AlzheimerForm() {
     };
 
     const handleConsultClick = () => {
-        navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
-    };
+        navigate(`/contact?disease=${encodeURIComponent('alzheimer')}`);
+      };
 
     return (
         <ThemeProvider theme={defaultTheme}>

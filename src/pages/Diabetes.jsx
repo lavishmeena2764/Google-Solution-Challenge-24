@@ -28,7 +28,7 @@ function DiabetesForm() {
     Age: 0
   });
   
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(1);
 
   const navigate = useNavigate();
 
@@ -61,7 +61,7 @@ function DiabetesForm() {
   };
 
   const handleConsultClick = () => {
-    navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
+    navigate(`/contact?disease=${encodeURIComponent('diabetes')}`);
   };
 
   return (

@@ -57,7 +57,7 @@ function PregnancyRiskForm() {
   };
 
   const handleConsultClick = () => {
-    navigate(`/consult?message=${encodeURIComponent('Your message here')}`);
+    navigate(`/contact?disease=${encodeURIComponent('maternity')}`);
   };
 
   return (
