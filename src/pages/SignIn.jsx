@@ -53,10 +53,11 @@ function Login() {
 }
 
 export default Login;
-
 const defaultTheme = createTheme();
 
 function SignIn() {
+  // eslint-disable-next-line no-unused-vars
+  const [userID,setUserID]=useState("");
   const [email,setEmail]=useState("");
   const [passwd,setPasswd]=useState("");
 
@@ -64,11 +65,12 @@ function SignIn() {
     event.preventDefault();
     console.log(email,passwd);
     try{
-      await signInWithEmailAndPassword(auth,email,passwd);
+      const user=await signInWithEmailAndPassword(auth,email,passwd);
       toast.success("User Logged in Succesfully!",{
-        position:"top-left"
+        position:"top-center"
        })
-       window.location.href="/upload";
+       //console.log(user.user.uid);
+       setUserID(user.user.uid);  
     }catch(err){
       console.log(err);
       toast.error(err.message,{

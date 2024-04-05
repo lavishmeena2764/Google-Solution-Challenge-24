@@ -3,6 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Cards(props) {
   return (
@@ -23,9 +24,11 @@ export default function Cards(props) {
         </CardContent>
       </CardActionArea>
       <CardActions className="flex flex-col mt-[0.1px] items-center ">
-        <Button size="small" color="primary">
-          Consult
-        </Button>
+        <Link to={props.link}>
+          <Button size="small" color="primary">
+            Consult
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

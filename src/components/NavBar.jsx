@@ -11,7 +11,7 @@ const Navbar = () => {
   const navItems = [
     { id: 1, text: "Home", url: "http://localhost:5173/" },
     { id: 2, text: "Services", url: "http://localhost:5173/" },
-    { id: 3, text: "Upload", url: "http://localhost:5173/upload" },
+    { id: 3, text: "Upload", url: "http://localhost:5173/user/upload" },
     { id: 4, text: "Login/Register", url: "http://localhost:5173/login" },
   ];
 
